@@ -7,7 +7,7 @@ export default makeStyles(() => ({
   },
   media: {
     height: 0,
-    paddingTop: '66.25%', // 16:9
+    paddingTop: '66.25%',
   },
   cartActions: {
     display: 'flex',

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, Typography, IconButton, CardActions } from "@material-ui/core";
-import { AddShoppingCart, ControlCameraOutlined } from "@material-ui/icons";
+import { AddShoppingCart } from "@material-ui/icons";
 import useStyles from "./styles";
 
-const Product = ({ product }) => {
+const Product = ({ product, onAddToCart }) => {
 
-    console.log(product);
+    //console.log(product);
     const classes = useStyles();
     return (
         <Card className={classes.root}>
@@ -22,7 +22,7 @@ const Product = ({ product }) => {
                 <Typography dangerouslySetInnerHTML={{__html: product.description}} variant="body2" color="textSecondary" />
             </CardContent>
             <CardActions disableSpacing className={classes.cartActions}>
-                <IconButton aria-label="Add to cart">
+                <IconButton aria-label="Add to cart" onClick={() => onAddToCart(product.id, 1)}>
                     <AddShoppingCart />
                 </IconButton>
             </CardActions>
