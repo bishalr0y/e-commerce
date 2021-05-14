@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
   emptyButton: {
     minWidth: '150px',
     [theme.breakpoints.down('xs')]: {
-      marginBottom: '5px',
+      marginBottom: '10px',
     },
     [theme.breakpoints.up('xs')]: {
       marginRight: '20px',
@@ -26,4 +26,8 @@ export default makeStyles((theme) => ({
     width: '100%',
     justifyContent: 'space-between',
   },
+  textMargin: {
+      marginTop: '5%',
+  }
+  
 }));
