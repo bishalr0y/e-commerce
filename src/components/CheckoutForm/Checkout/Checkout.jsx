@@ -7,7 +7,7 @@ import PaymentForm from '../PaymentForm';
 const steps = ['Shipping address', 'Payment details'];
 
 const Checkout = () => {
-    const [activeStep, setActiveStep] = useState(2);
+    const [activeStep, setActiveStep] = useState(0);
     const classes = useStyles();
 
     const Confirmation = () => (
@@ -23,7 +23,7 @@ const Checkout = () => {
         <>
             <div className={classes.toolbar} />
             <main className={classes.layout} />
-            <Paper className={classes.paper}>
+            <Paper className={classes.paper} variant='elevation'>
                 <Typography variant="h4" align="center">Checkout</Typography>
                 <Stepper activeStep={activeStep} className={classes.stepper}>
                     {steps.map((step) => (
