@@ -48,6 +48,7 @@ const App = () => {
 
 
     return (
+        
         <Router>
             <div>
                 <Navbar totalItems={cart.total_items} />
