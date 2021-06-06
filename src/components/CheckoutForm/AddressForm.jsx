@@ -19,7 +19,7 @@ const AddressForm = ({ checkoutToken, test }) => {
     const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
     setShippingCountries(countries);
-    setShippingCountry(Object.keys(countries)[0]);
+    setShippingCountry(Object.keys(countries)[0]); //converts object keys into an array
   };
 
   const fetchSubdivisions = async (countryCode) => {
@@ -63,7 +63,7 @@ const AddressForm = ({ checkoutToken, test }) => {
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Country</InputLabel>
               <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
-                {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => (
+                {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => ( //Object.entries return the key and value of the object
                   <MenuItem key={item.id} value={item.id}>
                     {item.label}
                   </MenuItem>
