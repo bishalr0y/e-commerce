@@ -9,6 +9,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 const PaymentForm = ({ checkoutToken, shippingData, nextStep, backStep, onCaptureCheckout }) => {
 
     const handleSubmit = async (event, elements, stripe) => {
+        
         event.preventDefault(); //this will prevent the website from getting refresh after the button is clicked
         if(!stripe || !elements) return; //stripe cannot do anything if we don't have these
         const cardElement = elements.getElement(CardElement);
@@ -17,33 +18,35 @@ const PaymentForm = ({ checkoutToken, shippingData, nextStep, backStep, onCaptur
         'card', card: cardElement });
 
         if(error) {
-            console.log(error);
+            console.log("[Error]", error);
         } else {
             const orderData = {
                 line_items: checkoutToken.live.line_items,
                 customer: { firstname: shippingData.firstName, lastname: shippingData.lastName, email: shippingData.email }, 
                 shipping: { 
-                    name: 'Primary', 
+                    name: 'International', 
                     street: shippingData.address1, 
                     town_city: shippingData.city, 
                     county_state: shippingData.shippingSubdivision,
                     postal_zip_code: shippingData.zip,
                     country: shippingData.shippingCountry
                 },
-                fullfillment: { shipping_method: shippingData.shippingOption }, 
+                fulfillment: { shipping_method: shippingData.shippingOption }, 
                 payment: {
                     gateaway: 'stripe',
                     stripe: {
-                        payment_method_id: paymentMethod.id
-                    } 
+                        payment_method_id: paymentMethod.id,
+                    }, 
 
-                }
-            }
+                },
+            };
             onCaptureCheckout(checkoutToken.id, orderData);
 
             nextStep();
         }
-    }
+    };
+
+   
 
     return (
         <>
@@ -72,3 +75,7 @@ const PaymentForm = ({ checkoutToken, shippingData, nextStep, backStep, onCaptur
 }
 
 export default PaymentForm;
+
+
+
+

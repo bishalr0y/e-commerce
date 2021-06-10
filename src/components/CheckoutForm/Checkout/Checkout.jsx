@@ -9,7 +9,7 @@ import useStyles from './styles';
 
 const steps = ['Shipping address', 'Payment details'];
 
-const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
+const Checkout = ({ cart, onCaptureCheckout, handleEmptyCart, order, error }) => {
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [activeStep, setActiveStep] = useState(0);
   const [shippingData, setShippingData] = useState({});
@@ -41,31 +41,47 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     nextStep();
   };
 
-  let Confirmation = () => (order.customer ? (
-    <>
-      <div>
-        <Typography variant="h5">Thank you for your purchase, {order.customer.firstname} {order.customer.lastname}!</Typography>
-        <Divider className={classes.divider} />
-        <Typography variant="subtitle2">Order ref: {order.customer_reference}</Typography>
-      </div>
-      <br />
-      <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
-    </>
-  ) : (
-    <div className={classes.spinner}>
-      <CircularProgress />
-    </div>
-  ));
+  // let Confirmation = () => (order.customer ? (
+  //   <>
+  //     <div>
+  //       <Typography variant="h5">Thank you for your purchase, {order.customer.firstname} {order.customer.lastname}!</Typography>
+  //       <Divider className={classes.divider} />
+  //       <Typography variant="subtitle2">Order ref: {order.customer_reference}</Typography>
+  //     </div>
+  //     <br />
+  //     <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
+  //   </>
+  // ) : (
+  //   <div className={classes.spinner}>
+  //     <CircularProgress />
+  //   </div>
+  // ));
 
-  if (error) {
-    Confirmation = () => (
+  let Confirmation = () => {
+    return(
       <>
-        <Typography variant="h5">Error: {error}</Typography>
-        <br />
-        <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
-      </>
-    );
+           <div>
+             <Typography variant="h5">Thank you for your purchase!</Typography>
+             <Divider className={classes.divider} />
+             <Typography variant="subtitle2">Visit Again</Typography>
+           </div>
+           <br />
+           <Button onClick={handleEmptyCart} component={Link} variant="outlined" type="button" to="/">Back to home</Button>
+         </>
+    )
   }
+  
+
+
+  // if (error) {
+  //   Confirmation = () => (
+  //     <>
+  //       <Typography variant="h5">Error: {error}</Typography>
+  //       <br />
+  //       <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
+  //     </>
+  //   );
+  // }
 
   const Form = () => (activeStep === 0
     ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} test={test} />
@@ -93,3 +109,5 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 };
 
 export default Checkout;
+
+
