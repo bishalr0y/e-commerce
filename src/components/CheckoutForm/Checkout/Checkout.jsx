@@ -49,6 +49,8 @@ const Checkout = ({ cart, onCaptureCheckout, handleEmptyCart, order, error }) =>
            <div>
              <Typography variant="h5">Thank you for your purchase!</Typography>
              <Divider className={classes.divider} />
+             <Typography variant="h6">We will contact you when your order gets shipped</Typography>
+             <Divider className={classes.divider} />
              <Typography variant="subtitle2">Visit Again</Typography>
            </div>
            <br />

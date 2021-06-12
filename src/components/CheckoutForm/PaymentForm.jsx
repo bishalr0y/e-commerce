@@ -11,11 +11,7 @@ const PaymentForm = ({ checkoutToken, shippingData, nextStep, backStep, onCaptur
         
         event.preventDefault(); //this will prevent the website from getting refresh after the button is clicked
        
-
-       
-
-        
-            const orderData = {
+        const orderData = {
                 line_items: checkoutToken.live.line_items,
                 customer: { firstname: shippingData.firstName, lastname: shippingData.lastName, email: shippingData.email }, 
                 shipping: { 
@@ -39,10 +35,11 @@ const PaymentForm = ({ checkoutToken, shippingData, nextStep, backStep, onCaptur
         <Review checkoutToken = {checkoutToken} />
         <Divider />
         <Typography varinat ="h6" gutterBottom style = {{margin: '20px 0'}}>Payment Method</Typography>
+        <Typography variant="subtitle1" style={{margin: '20px 0'}}>Cash on Delivery(COD)</Typography>
             <div style = {{display: 'flex', justifyContent: 'space-between'}}>
                 <Button variant = "outlined" onClick = {backStep} > Back </Button>
                 <Button type = "submit" variant = "contained" color= "primary" onClick = {(e) => handleSubmit(e)}> 
-                            Pay {checkoutToken.live.subtotal.formatted_with_symbol} 
+                            Pay {checkoutToken.live.subtotal.formatted_with_symbol} (COD) 
                 </Button>
             </div>
     </div>
