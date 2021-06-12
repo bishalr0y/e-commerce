@@ -1,4 +1,4 @@
-<h2>React Recipe Search App</h2>
+<h2>React Recipe Search App 🛒</h2>
 This is an E-commerce web application🛒 which is made with React.js and Commerce.js. It includes all the basic features like adding products to the cart, incrementing and decrementing the number of product, removing a product from the cart and making the cart completely empty. It also contains an input form while takes information like name, address, email, shipping country, subdivion and zip/pin code, and provides a shipping option based on the shipping country. 
 <br>
 
