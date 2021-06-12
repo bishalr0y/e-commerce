@@ -54,7 +54,7 @@ const Checkout = ({ cart, onCaptureCheckout, handleEmptyCart, order, error }) =>
              <Typography variant="subtitle2">Visit Again</Typography>
            </div>
            <br />
-           <Button onClick={handleEmptyCart} component={Link} variant="outlined" color="secondary" type="button" to="/">Back to home</Button>
+           <Button onClick={handleEmptyCart} component={Link} variant="contained" color="secondary" type="button" to="/">Back to home</Button>
          </>
     )
   }

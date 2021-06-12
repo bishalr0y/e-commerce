@@ -4,6 +4,7 @@ export default makeStyles(() => ({
   root: {
     // maxWidth: 345, original width style
     maxWidth: '100%',
+    backgroundImage: 'linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%)'
   },
   media: {
     height: 0,
