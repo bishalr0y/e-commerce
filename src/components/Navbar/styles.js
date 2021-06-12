@@ -10,6 +10,7 @@ export default makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
+    backgroundImage: 'linear-gradient(-225deg, #20E2D7 0%, #F9FEA5 100%)'
   },
   title: {
     flexGrow: 1,
