@@ -50,7 +50,7 @@ API used : https://commercejs.com
 ```
 MIT License
 
-Copyright (c) 2021 bishalr0y
+Copyright (c) 2021 Bishal Roy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
