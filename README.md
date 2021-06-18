@@ -3,13 +3,13 @@ This is an E-commerce web application🛒 which is made with React.js and Commer
 <br>
 
 
-<h2>Demo</h2>
+<h2>Demo ✨</h2>
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/56751927/121778692-a43e5680-cbb5-11eb-9b6d-32702aa252e1.gif)
 
 
 
-<h2>How to set the project locally</h2>
+<h2>How to set the project locally ⚙</h2>
 
 * Open the terminal and then type 
  ```
@@ -39,7 +39,7 @@ REACT_APP_CHEC_PUBLIC_KEY=<YOUR_PUBLIC_KEY>
  ```
   
 
-<h2>API</h2>
+<h2>API 🔎</h2>
 
 API used : https://commercejs.com
 
